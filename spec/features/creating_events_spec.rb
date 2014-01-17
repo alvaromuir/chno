@@ -11,5 +11,11 @@ feature 'Creating Events' do
     click_button 'Create Event'
 
     expect(page).to have_content('Event has been created.')
+
+    event  = Event.where(name: 'Hack Day').first
+    expect(page.current_url).to eql(event_url(event))
+
+    title = 'Hack Day : Events : CHNO'
+    expect(page).to have_title(title)
   end
 end
