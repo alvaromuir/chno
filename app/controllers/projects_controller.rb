@@ -17,6 +17,19 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @project.update(project_params)
+      flash[:notice] = "Project has been udpated."
+      redirect_to [@event, @project]
+    else
+      flash[:alert] = "Project has not been updated."
+      render action: 'edit'
+    end
+  end
+
   private
 
     def set_event
