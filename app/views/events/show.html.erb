@@ -10,3 +10,10 @@
           } %>
 
 <%= link_to "New Project", new_event_project_path(@event) %>
+<ul id='projects'>
+  <% @event.projects.each do |project| %>
+  <li>
+    #<%= project.id %> - <%= link_to project.title, [@event, project] %>
+  </li>
+  <% end %>
+</ul>
