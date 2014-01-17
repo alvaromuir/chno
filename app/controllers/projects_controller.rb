@@ -30,6 +30,12 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def destroy
+    @project.destroy
+    flash[:notice] = "Project has been deleted."
+    redirect_to @event
+  end
+
   private
 
     def set_event

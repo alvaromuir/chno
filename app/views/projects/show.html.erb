@@ -3,4 +3,10 @@
   <%= simple_format(@project.description) %>
 
   <%= link_to "Edit Project", [:edit, @event, @project] %>
+  <%= link_to "Delete Project", [@event, @project],
+              method: :delete,
+              data: { 
+                confirm: "Are you sure you want to delete this project?"
+              }
+  %>
 </div>
