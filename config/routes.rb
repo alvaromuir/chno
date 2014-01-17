@@ -1,5 +1,7 @@
 Chno::Application.routes.draw do
   root 'events#index'
 
-  resources :events
+  resources :events do
+    resources :projects
+  end
 end
