@@ -7,7 +7,7 @@ feature 'Creating Events' do
         click_link 'New Event'
     end
 
-  scenario "can create a hack-a-thon event" do
+  scenario "can create an event" do
     fill_in 'Name', with: "Hack Day"
     fill_in 'Description', with: "Dev Hack-a-thon"
     click_button 'Create Event'
