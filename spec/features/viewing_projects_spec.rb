@@ -25,7 +25,6 @@ feature "Viewing projects" do
 
     click_link 'Demo project'
 
-    puts page.body
     within('#project h2') do
       expect(page).to have_content("Demo project")
     end
